@@ -1,0 +1,14 @@
+{
+  "name": "Gruntfile",
+  "version": "0.1.1",
+  "author": "PSDGator",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "matchdep": "*"
+  }
+}

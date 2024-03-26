@@ -1,0 +1,118 @@
+/* ==========================================================================
+   A basic old school grid
+   ========================================================================== */
+   .row{
+    @extend %clearfix;
+    margin-left: -$grid-gutter;
+    margin-right: -$grid-gutter;
+
+    &.row--gutterless {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &.row--equal-columns{
+        @include flexbox();
+        @include flex-direction(column);
+        justify-content: left;
+        flex-wrap: wrap;
+
+        @media screen and (min-width:$breakpoint_sm){
+            @include flex-direction(row);
+        }
+    }
+
+    &.fd-row{
+        @include flex-direction(row);
+    }
+
+    &.row--35 {
+        margin-left: -35px;
+        margin-right: -35px;
+        &>.col {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+    }
+
+    &.row--25 {
+      margin-left: -25px;
+      margin-right: -25px;
+      &>.col {
+          padding-left: 25px;
+          padding-right: 25px;
+      }
+  }
+}
+
+.col {
+    float: left;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    width:100%;
+
+    .row--gutterless & {
+        padding-left: 0;
+    }
+
+    .row--equal-columns & {
+        float:none;
+    }
+}
+
+@mixin grid-loop($name){
+    @for $i from 0 through $grid-columns {
+        @if $i != 0 {
+
+          @if $name != '' {
+
+            .col--#{$name}-#{$i} {
+                width: percentage($i/$grid-columns);
+            }
+            .col--#{$name}-#{$i}-gutterless {
+                padding-left: 0;
+            }
+
+          } @else {
+
+            .col--#{$i} {
+                width: percentage($i/$grid-columns);
+            }
+            .col--#{$i}-gutterless {
+                padding-left: 0;
+            }
+
+          }
+
+
+        }
+
+        .col--#{$name}-offset-#{$i} {
+            margin-left: percentage($i/$grid-columns);
+        }
+    }
+}
+
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $size: nth($breakpoint, 2);
+
+    @if $size == false{
+		  @include grid-loop($name);
+    }
+    @else{
+      @media only screen and (max-width: $size) {
+        @include grid-loop($name);
+      }
+      @media only screen and (min-width: $size) {
+        .hide--#{$name}-up {
+          display: none !important;
+        }
+      }
+      @media only screen and (max-width: $size - 1) {
+        .hide--#{$name}-down {
+            display: none !important;
+        }
+      }
+	}
+}
