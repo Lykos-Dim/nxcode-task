@@ -6,6 +6,9 @@
  * Author: Dimitris Lykos
  */
 
+// Add CPT functionality.
+require_once(plugin_dir_path(__FILE__) . 'includes/cpt.php');
+
 // Include widget functionality.
 require_once(plugin_dir_path(__FILE__) . 'includes/widget-doctors.php');
 
