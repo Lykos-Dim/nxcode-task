@@ -33,6 +33,13 @@ module.exports = function(grunt) {
           livereload: true
         }
       },
+      js: {
+        files: ["js/*.js"],
+        tasks: ["uglify"],
+        options: {
+          livereload: true
+        }
+      },
       html: {
         files: ["**/*.html"],
         options: {
@@ -45,5 +52,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.registerTask("default", ["watch"]);
+  grunt.registerTask("default", ["sass", "cssmin", "uglify", "watch"]);
 };

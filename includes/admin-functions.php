@@ -19,24 +19,32 @@ add_action('add_meta_boxes', 'doctors_register_meta_boxes');
 // Render meta box content
 function render_doctor_details_meta_box($post) {
     // Retrieve existing values from the database
+    $doctor_name = get_post_meta($post->ID, 'doctor_name', true);
     $doctor_phone = get_post_meta($post->ID, 'doctor_phone', true);
     $doctor_specialty = get_post_meta($post->ID, 'doctor_specialty', true);
     $doctor_facebook = get_post_meta($post->ID, 'doctor_facebook', true);
     ?>
     <div class="meta-box">
         <div class="meta-box__inner">
+
             <div class="meta-box__row">
-                <label for="doctor_phone">Phone:</label>
-                <input type="text" id="doctor_phone" name="doctor_phone" value="<?php echo esc_attr($doctor_phone); ?>" class="widefat" />
+                <label for="doctor_name">Doctor Name*</label>
+                <input type="text" id="doctor_name" name="doctor_name" value="<?php echo esc_attr($doctor_name); ?>" class="widefat" required />
             </div>
 
             <div class="meta-box__row">
-                <label for="doctor_specialty">Specialty:</label>
-                <input type="text" id="doctor_specialty" name="doctor_specialty" value="<?php echo esc_attr($doctor_specialty); ?>" class="widefat" />
+                <label for="doctor_phone">Phone*</label>
+                <input type="tel" id="doctor_phone" name="doctor_phone" value="<?php echo esc_attr($doctor_phone); ?>" class="widefat" required pattern="\d{10}" />
+                <small>example: 6934345882</small>
             </div>
 
             <div class="meta-box__row">
-                <label for="doctor_facebook">Facebook Page:</label>
+                <label for="doctor_specialty">Specialty*</label>
+                <input type="text" id="doctor_specialty" name="doctor_specialty" value="<?php echo esc_attr($doctor_specialty); ?>" class="widefat" required />
+            </div>
+
+            <div class="meta-box__row">
+                <label for="doctor_facebook">Facebook Page</label>
                 <input type="text" id="doctor_facebook" name="doctor_facebook" value="<?php echo esc_attr($doctor_facebook); ?>" class="widefat" />
             </div>
 
@@ -64,6 +72,9 @@ function save_doctor_meta_data($post_id) {
     }
 
     // Update the meta fields
+    if (isset($_POST['doctor_name'])) {
+        update_post_meta($post_id, 'doctor_name', sanitize_text_field($_POST['doctor_name']));
+    }
     if (isset($_POST['doctor_phone'])) {
         update_post_meta($post_id, 'doctor_phone', sanitize_text_field($_POST['doctor_phone']));
     }
