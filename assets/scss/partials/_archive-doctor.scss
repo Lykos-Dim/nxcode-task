@@ -1,0 +1,150 @@
+.doctor-card {
+   position: relative;
+   background-color: #f8f9fa;
+   border: 1px solid #dee2e6;
+   border-radius: .25rem;
+   cursor: pointer;
+
+   &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 60px;
+      height: 1px;
+      width: 0;
+      background: #fff;
+      transition: width .4s cubic-bezier(.785, .135, .15, .86);
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      /* Transition effect for opacity */
+
+   }
+
+   &:hover {
+
+      &:after {
+         transition: width 0 cubic-bezier(.63, .24, .26, .91);
+         width: 100%;
+         opacity: 1;
+
+      }
+
+      .doctor-card__content {
+         clip-path: inset(0 0 0 0);
+         -webkit-clip-path: inset(0 0 0 0);
+         -webkit-transition: -webkit-clip-path .3s cubic-bezier(.63, .24, .26, .91) .1s;
+         transition: -webkit-clip-path .3s cubic-bezier(.63, .24, .26, .91) .1s;
+         -o-transition: clip-path .3s cubic-bezier(.63, .24, .26, .91) .1s;
+         transition: clip-path .3s cubic-bezier(.63, .24, .26, .91) .1s;
+         transition: clip-path .3s cubic-bezier(.63, .24, .26, .91) .1s, -webkit-clip-path .3s cubic-bezier(.63, .24, .26, .91) .1s;
+         z-index: 1;
+
+      }
+   }
+
+   &--wrapper {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); // Creates a 5-column layout
+      grid-gap: 20px; // Sets the gap between grid items
+   }
+
+   &--top {
+      position: relative;
+      padding: 98px 0 40px;
+      text-align: center;
+
+      &__title {
+         position: relative;
+
+         &:before {
+            content: "";
+            position: absolute;
+            background: url(../images/doctors.svg);
+            width: 55px;
+            height: 78px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -67px;
+         }
+      }
+   }
+
+
+   &__thumbnail {
+      width: 100%;
+      overflow: hidden;
+
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
+
+   &__content {
+      padding: 15px;
+
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      padding: 18px 20px 14px;
+      background-color: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      clip-path: inset(0 100% 0 0);
+      -webkit-clip-path: inset(0 100% 0 0);
+      -webkit-transition: -webkit-clip-path .3s cubic-bezier(.63, .24, .26, .91) 0s;
+      transition: -webkit-clip-path .3s cubic-bezier(.63, .24, .26, .91) 0s;
+      -o-transition: clip-path .3s cubic-bezier(.63, .24, .26, .91) 0s;
+      transition: clip-path .3s cubic-bezier(.63, .24, .26, .91) 0s;
+      transition: clip-path .3s cubic-bezier(.63, .24, .26, .91) 0s, -webkit-clip-path .3s cubic-bezier(.63, .24, .26, .91) 0s;
+
+      .doctor-card__title {
+         margin: 0 0 5px;
+         font-size: 1.1rem;
+      }
+
+      span {
+         color: #007bff;
+         font-size: 0.8rem;
+      }
+
+      p {
+         font-size: 1rem;
+         line-height: 1.2rem;
+      }
+   }
+}
+
+
+.doctors-pagination {
+   .nav-links {
+      padding: 20px 0;
+      text-align: center;
+   }
+}
+
+@media (max-width: 992px) {
+   .doctor-card--wrapper {
+      grid-template-columns: repeat(4, 1fr); // For 4 columns on medium screens
+
+   }
+}
+
+@media (max-width: 768px) {
+   .doctor-card--wrapper {
+      grid-template-columns: repeat(2, 1fr); // For 2 columns on small screens
+   }
+}
+
+@media (max-width: 500px) {
+   .doctor-card--wrapper {
+      grid-template-columns: repeat(1, 1fr); // For 2 columns on small screens
+   }
+}

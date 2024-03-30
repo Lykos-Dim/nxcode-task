@@ -9,7 +9,7 @@ function doctors_custom_post_type() {
         'public'                => true,
         'has_archive'           => true,
         'rewrite'               => array('slug' => 'doctors'),
-        'supports'              => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'supports'              => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
     );
     $args = array(
         'labels'                => $labels,
@@ -18,7 +18,7 @@ function doctors_custom_post_type() {
         'capability_type'       => 'post',
         'menu_position'         => 5,
         'menu_icon'             => 'dashicons-id',
-        'supports'              => array('title', 'editor', 'thumbnail'),
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
         'rewrite'               => array('slug' => 'doctors'),
         'has_archive'           => true,
     );

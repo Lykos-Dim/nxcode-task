@@ -17,3 +17,22 @@ function doctors_single_template($single_template) {
 	return $single_template;
 }
 add_filter('single_template', 'doctors_single_template');
+
+/**
+ * The template for displaying archive doctor posts.
+ * This template is used when an archive page from the 'doctors' custom post type is queried.
+ * For example, when a visitor clicks on a doctor archive link, WordPress uses this template to display the archive page.
+ *
+ * @package WordPress
+ * @subpackage Doctors_Plugin_Task
+ */
+function doctors_archive_template($archive_template) {
+    global $post;
+
+    if (is_post_type_archive('doctors')) {
+        $archive_template = plugin_dir_path(__FILE__) . '../archive-doctors.php';
+    }
+
+    return $archive_template;
+}
+add_filter('archive_template', 'doctors_archive_template');

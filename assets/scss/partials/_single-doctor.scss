@@ -40,6 +40,7 @@
       height: 150px;
       border-radius: 50%;
       overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
       img {
          width: 100%;
@@ -60,9 +61,11 @@
       gap: 50px;
       margin-top: 25px;
    }
-.breadcrumbs{
-   margin-right: auto;
-}
+
+   .breadcrumbs {
+      margin-right: auto;
+   }
+
    .related-post {
       a {
          display: flex;
