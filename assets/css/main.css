@@ -1033,5 +1033,75 @@ header {
   h2,
   h3 {
     page-break-after: avoid; } }
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
+.page-header {
+  padding: 20px;
+  background-color: #f5f5f5; }
+  .page-header__author-wrapper, .page-header__info-wrapper {
+    display: flex;
+    align-items: center; }
+  .page-header__author-wrapper {
+    flex-direction: column; }
+  .page-header__info-wrapper {
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px; }
+  .page-header__title {
+    font-size: 1.5em;
+    margin-top: 15px; }
+  .page-header__specialty {
+    font-size: 1.2em;
+    color: #666; }
+  .page-header__thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden; }
+    .page-header__thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .page-header__info {
+    font-size: 1em;
+    color: #333;
+    align-self: flex-end;
+    margin-top: 15px; }
+  .page-header__content-wrapper {
+    display: flex;
+    gap: 50px;
+    margin-top: 25px; }
+  .page-header .breadcrumbs {
+    margin-right: auto; }
+  .page-header .related-post a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px; }
+  .page-header .related-posts {
+    flex-basis: 80%;
+    max-width: 80%;
+    margin-top: 20px; }
+    .page-header .related-posts h2 {
+      margin-bottom: 25px; }
+    .page-header .related-posts article:not(:last-of-type) {
+      margin-bottom: 15px; }
+    .page-header .related-posts article .thumbnail {
+      width: 100px;
+      height: 100px; }
+      .page-header .related-posts article .thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+  .page-header .sidebar {
+    flex-basis: 20%;
+    max-width: 20%;
+    border-radius: 5px;
+    background-color: #f0f0f0; }
 
 /*# sourceMappingURL=main.css.map */
