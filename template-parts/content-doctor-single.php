@@ -100,7 +100,11 @@
             ?>
 
             <aside class="sidebar">
-                <!-- Sidebar content here -->
+            <?php if ( is_active_sidebar( 'latest_doctors_sidebar' ) ) : ?>
+                <div id="secondary" class="widget-area" role="complementary">
+                    <?php dynamic_sidebar( 'latest_doctors_sidebar' ); ?>
+                </div><!-- #secondary -->
+            <?php endif; ?>
             </aside>
         </div>
     </div>

@@ -1103,7 +1103,141 @@ header {
     flex-basis: 20%;
     max-width: 20%;
     border-radius: 5px;
-    background-color: #f0f0f0; }
+    background-color: #f0f0f0;
+    margin-left: auto; }
+
+.latest-doctors-list .doctor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); }
+  .latest-doctors-list .doctor-item:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }
+  .latest-doctors-list .doctor-item .container {
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto; }
+  .latest-doctors-list .doctor-item .page-header {
+    padding: 20px;
+    background-color: #f5f5f5; }
+    .latest-doctors-list .doctor-item .page-header__author-wrapper, .latest-doctors-list .doctor-item .page-header__info-wrapper {
+      display: flex;
+      align-items: center; }
+    .latest-doctors-list .doctor-item .page-header__author-wrapper {
+      flex-direction: column; }
+    .latest-doctors-list .doctor-item .page-header__info-wrapper {
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 5px; }
+    .latest-doctors-list .doctor-item .page-header__title {
+      font-size: 1.5em;
+      margin-top: 15px; }
+    .latest-doctors-list .doctor-item .page-header__specialty {
+      font-size: 1.2em;
+      color: #666; }
+    .latest-doctors-list .doctor-item .page-header__thumbnail {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+      .latest-doctors-list .doctor-item .page-header__thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .latest-doctors-list .doctor-item .page-header__info {
+      font-size: 1em;
+      color: #333;
+      align-self: flex-end;
+      margin-top: 15px; }
+    .latest-doctors-list .doctor-item .page-header__content-wrapper {
+      display: flex;
+      gap: 50px;
+      margin-top: 25px; }
+    .latest-doctors-list .doctor-item .page-header .breadcrumbs {
+      margin-right: auto; }
+    .latest-doctors-list .doctor-item .page-header .related-post a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px; }
+    .latest-doctors-list .doctor-item .page-header .related-posts {
+      flex-basis: 80%;
+      max-width: 80%;
+      margin-top: 20px; }
+      .latest-doctors-list .doctor-item .page-header .related-posts h2 {
+        margin-bottom: 25px; }
+      .latest-doctors-list .doctor-item .page-header .related-posts article:not(:last-of-type) {
+        margin-bottom: 15px; }
+      .latest-doctors-list .doctor-item .page-header .related-posts article .thumbnail {
+        width: 100px;
+        height: 100px; }
+        .latest-doctors-list .doctor-item .page-header .related-posts article .thumbnail img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+    .latest-doctors-list .doctor-item .page-header .sidebar {
+      flex-basis: 20%;
+      max-width: 20%;
+      border-radius: 5px;
+      background-color: #f0f0f0; }
+  .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); }
+    .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item:not(:last-child) {
+      margin-bottom: 10px; }
+    .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      text-decoration: none;
+      color: inherit; }
+      .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item a .doctor-info {
+        flex-grow: 1; }
+        .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item a .doctor-info .doctor-name {
+          font-weight: bold; }
+        .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item a .doctor-info .doctor-name-field {
+          display: block;
+          font-size: 0.8em;
+          color: #666; }
+      .latest-doctors-list .doctor-item .latest-doctors-list .doctor-item a .doctor-thumbnail img {
+        width: 100%;
+        border-radius: 50%; }
+  .latest-doctors-list .doctor-item:not(:last-child) {
+    margin-bottom: 10px; }
+  .latest-doctors-list .doctor-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-decoration: none;
+    color: inherit; }
+    .latest-doctors-list .doctor-item a .doctor-info {
+      flex-grow: 1; }
+      .latest-doctors-list .doctor-item a .doctor-info .doctor-name {
+        font-weight: bold; }
+      .latest-doctors-list .doctor-item a .doctor-info .doctor-name-field {
+        display: block;
+        font-size: 0.8em;
+        color: #666; }
+    .latest-doctors-list .doctor-item a .doctor-thumbnail img {
+      width: 100%;
+      border-radius: 50%; }
+
+.widget-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 20px; }
 
 .doctor-card {
   position: relative;
