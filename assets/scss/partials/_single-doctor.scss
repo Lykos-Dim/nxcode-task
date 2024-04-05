@@ -108,7 +108,6 @@
       flex-basis: 20%;
       max-width: 20%;
       border-radius: 5px;
-      background-color: #f0f0f0;
       margin-left: auto;
    }
 }
@@ -320,9 +319,26 @@
       }
    }
 }
-.widget-title{
+
+.widget-title {
    font-size: 20px;
    margin-bottom: 20px;
    text-align: center;
    padding: 0 20px;
+}
+
+
+@media (max-width: 992px) {
+   .page-header__content-wrapper {
+      flex-direction: column;
+   }
+   .page-header .sidebar{
+      margin-left: 0;
+      flex-basis: 100%;
+      max-width: 100%;
+   }
+   .page-header .related-posts{
+      flex-basis: 100%;
+      max-width: 100%;
+   }
 }
